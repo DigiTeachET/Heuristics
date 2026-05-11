@@ -55,43 +55,43 @@
   </div>
  
   <!-- Confusion card: hidden until the end screen appears (showFinished) -->
-  <!-- Explains heuristics 3, 5, and 9 which students most commonly mix up -->
-  <div class="card" id="confusion-card" style="display:none;">
-    <p style="font-size:15px; font-weight:500; margin-bottom:4px;">The ones everyone mixes up</p>
-    <p style="font-size:13px; color:#5f5e5a; margin-bottom:1.25rem;">These three heuristics are close enough to cause arguments. Here is how to tell them apart.</p>
- 
-    <!-- Heuristic 3: User control and freedom -->
-    <div style="border-left:3px solid #5DCAA5; padding:0.75rem 1rem; margin-bottom:1rem; border-radius:0 8px 8px 0; background:#f5f4f0;">
-      <p style="font-size:14px; font-weight:500; margin-bottom:4px; color:#1a1a18;">3. User control and freedom</p>
-      <p style="font-size:13px; color:#5f5e5a; margin-bottom:6px; line-height:1.6;">The mistake has already happened. The user clicked the wrong thing. Your job now is to give them a way out — an undo, a cancel, an emergency exit. This heuristic is about escape after a mistake.</p>
-      <p style="font-size:13px; color:#085041; background:#E1F5EE; padding:6px 10px; border-radius:6px;">Classic example: no undo button after deleting a file. The action happened — where is the exit?</p>
-    </div>
- 
-    <!-- Heuristic 5: Error prevention -->
-    <div style="border-left:3px solid #AFA9EC; padding:0.75rem 1rem; margin-bottom:1rem; border-radius:0 8px 8px 0; background:#f5f4f0;">
-      <p style="font-size:14px; font-weight:500; margin-bottom:4px; color:#1a1a18;">5. Error prevention</p>
-      <p style="font-size:13px; color:#5f5e5a; margin-bottom:6px; line-height:1.6;">The mistake has not happened yet. This heuristic is about stopping it before it occurs — through careful design, confirmation steps, or constraints that make the wrong action impossible or at least awkward. This heuristic is about stopping mistakes before they happen.</p>
-      <p style="font-size:13px; color:#085041; background:#E1F5EE; padding:6px 10px; border-radius:6px;">Classic example: an 'Are you sure you want to delete this?' dialogue before the action completes. The mistake is intercepted mid-flight.</p>
-    </div>
- 
-    <!-- Heuristic 9: Help users recover from errors -->
-    <div style="border-left:3px solid #F0997B; padding:0.75rem 1rem; margin-bottom:1rem; border-radius:0 8px 8px 0; background:#f5f4f0;">
-      <p style="font-size:14px; font-weight:500; margin-bottom:4px; color:#1a1a18;">9. Help users recognise, diagnose, and recover from errors</p>
-      <p style="font-size:13px; color:#5f5e5a; margin-bottom:6px; line-height:1.6;">The mistake has happened and an error message has appeared. This heuristic is about whether that message is actually useful. Does it explain what went wrong in plain language? Does it tell the user how to fix it? Or does it just say 'ERROR_CODE_7741' and leave them stranded?</p>
-      <p style="font-size:13px; color:#085041; background:#E1F5EE; padding:6px 10px; border-radius:6px;">Classic example: 'Incorrect password. Please try again or reset your password here.' — clear, human, and actionable.</p>
-    </div>
- 
-    <!-- Quick-reference summary — useful for exam situations -->
-    <div style="background:#f5f4f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.5rem;">
-      <p style="font-size:13px; font-weight:500; margin-bottom:6px; color:#1a1a18;">The quick test</p>
-      <p style="font-size:13px; color:#5f5e5a; line-height:1.6;">Ask yourself: when in the sequence of events does the heuristic apply?</p>
-      <p style="font-size:13px; color:#5f5e5a; line-height:1.8; margin-top:4px;">
-        Before the mistake — Error Prevention (heuristic 5)<br>
-        During the mistake — User Control and Freedom (heuristic 3)<br>
-        After the mistake, reading an error message — Error Recovery (heuristic 9)
-      </p>
-    </div>
+<!-- Explains heuristics 3, 5, and 9 which students most commonly mix up -->
+<div class="card" id="confusion-card" style="display:none;">
+  <p class="confusion-heading">The ones everyone mixes up</p>
+  <p class="confusion-intro">These three heuristics are close enough to cause arguments. Here is how to tell them apart.</p>
+
+  <!-- Heuristic 3: User control and freedom -->
+  <div class="confusion-block confusion-block--teal">
+    <p class="confusion-block-title">3. User control and freedom</p>
+    <p class="confusion-block-body">The mistake has already happened. The user clicked the wrong thing. Your job now is to give them a way out — an undo, a cancel, an emergency exit. This heuristic is about escape after a mistake.</p>
+    <p class="confusion-example">Classic example: no undo button after deleting a file. The action happened — where is the exit?</p>
   </div>
+
+  <!-- Heuristic 5: Error prevention -->
+  <div class="confusion-block confusion-block--purple">
+    <p class="confusion-block-title">5. Error prevention</p>
+    <p class="confusion-block-body">The mistake has not happened yet. This heuristic is about stopping it before it occurs — through careful design, confirmation steps, or constraints that make the wrong action impossible or at least awkward.</p>
+    <p class="confusion-example">Classic example: an 'Are you sure you want to delete this?' dialogue before the action completes. The mistake is intercepted mid-flight.</p>
+  </div>
+
+  <!-- Heuristic 9: Help users recover from errors -->
+  <div class="confusion-block confusion-block--coral">
+    <p class="confusion-block-title">9. Help users recognise, diagnose, and recover from errors</p>
+    <p class="confusion-block-body">The mistake has happened and an error message has appeared. This heuristic is about whether that message is actually useful. Does it explain what went wrong in plain language? Does it tell the user how to fix it? Or does it just say 'ERROR_CODE_7741' and leave them stranded?</p>
+    <p class="confusion-example">Classic example: 'Incorrect password. Please try again or reset your password here.' — clear, human, and actionable.</p>
+  </div>
+
+  <!-- Quick-reference summary — useful for exam situations -->
+  <div class="confusion-quicktest">
+    <p class="confusion-quicktest-title">The quick test</p>
+    <p class="confusion-quicktest-body">Ask yourself: when in the sequence of events does the heuristic apply?</p>
+    <p class="confusion-quicktest-list">
+      Before the mistake — Error Prevention (heuristic 5)<br>
+      During the mistake — User Control and Freedom (heuristic 3)<br>
+      After the mistake, reading an error message — Error Recovery (heuristic 9)
+    </p>
+  </div>
+</div>
  
 </div><!-- end .page-wrap -->
 
