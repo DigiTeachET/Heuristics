@@ -150,6 +150,85 @@ h1 {
 .feedback.correct { background: #E1F5EE; color: #085041; }
 .feedback.wrong { background: #FCEBEB; color: #501313; }
 
+
+/* ---- Confusion card: heading and intro ---- */
+.confusion-heading {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #1a1a18;
+}
+
+.confusion-intro {
+  font-size: 18px;
+  color: #5f5e5a;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- Confusion block: shared styles for each heuristic row ---- */
+.confusion-block {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0 8px 8px 0;
+  background: #f5f4f0;
+  border-left: 3px solid transparent; /* colour overridden by modifier below */
+}
+
+.confusion-block--teal   { border-left-color: #5DCAA5; }
+.confusion-block--purple { border-left-color: #AFA9EC; }
+.confusion-block--coral  { border-left-color: #F0997B; }
+
+.confusion-block-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #1a1a18;
+}
+
+.confusion-block-body {
+  font-size: 18px;
+  color: #5f5e5a;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* ---- Classic example box inside each block ---- */
+.confusion-example {
+  font-size: 18px;
+  color: #085041;
+  background: #E1F5EE;
+  padding: 6px 10px;
+  border-radius: 6px;
+  line-height: 1.6;
+}
+
+/* ---- Quick test summary box ---- */
+.confusion-quicktest {
+  background: #f5f4f0;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-top: 0.5rem;
+}
+
+.confusion-quicktest-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #1a1a18;
+}
+
+.confusion-quicktest-body {
+  font-size: 18px;
+  color: #5f5e5a;
+  line-height: 1.6;
+}
+
+.confusion-quicktest-list {
+  font-size: 18px;
+  color: #5f5e5a;
+  line-height: 1.8;
+  margin-top: 4px;
+}
 .finished-card {
     display: none;
     text-align: center;
