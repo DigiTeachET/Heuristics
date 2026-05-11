@@ -10,21 +10,26 @@
 <body>
 
 <div class="page-wrap">
-<!-- page title -->
+ 
+  <!-- Page heading and subtitle -->
   <h1>Nielsen's Heuristics — Spot the Violation</h1>
   <p class="subtitle">Kia ora! Ko wai koe? — Year 11 Hangarau Matihiko</p>
-<!-- card that displays score and a toggle to show the heuristic list -->
+ 
+  <!-- Header card: instructions, live score, and collapsible heuristics list -->
   <div class="card">
     <div class="top-bar">
       <div>
-        <p style="font-size:20px; color:#5f5e5a; margin-bottom:4px;">Read each disaster from Terrible Tech High. Pick which of Nielsen's 10 heuristics is being violated. You get one guess per scenario.</p>
+        <p style="font-size:14px; color:#5f5e5a; margin-bottom:4px;">Read each disaster from Terrible Tech High. Pick which of Nielsen's 10 heuristics is being violated. You get one guess per scenario.</p>
       </div>
+      <!-- Score counter — JS updates this after every answer -->
       <div>
         <p class="score-label">Tohu / Score</p>
-        <p class="score-val" id="score-display">0 / 7</p>
+        <p class="score-val" id="score-display">0 / 20</p>
       </div>
     </div>
+    <!-- Button toggles the .show class on the list below -->
     <button class="ref-toggle" onclick="document.getElementById('ref').classList.toggle('show')">Show / hide the 10 heuristics</button>
+    <!-- Reference list — hidden by default, shown on toggle -->
     <ol class="ref-list" id="ref">
       <li>Visibility of system status</li>
       <li>Match between system and the real world</li>
@@ -37,17 +42,58 @@
       <li>Help users recognise, diagnose, and recover from errors</li>
       <li>Help and documentation</li>
     </ol>
-  </div> <!-- end score card -->
-<!-- when the scenarios for each heuristic displays-->
+  </div>
+ 
+  <!-- Scenario slot: renderCurrent() replaces this content for each question -->
   <div id="scenarios"></div>
-
+ 
+  <!-- End screen: hidden until all questions are answered (showFinished) -->
   <div class="card finished-card" id="finished-msg">
     <p class="finish-text" id="finish-text"></p>
     <p class="finish-sub">Whakaaro: Which violation would cause the most harm to a real user? Discuss with your class.</p>
     <button class="reset-btn" onclick="resetActivity()">Try again</button>
   </div>
-
-</div>
+ 
+  <!-- Confusion card: hidden until the end screen appears (showFinished) -->
+  <!-- Explains heuristics 3, 5, and 9 which students most commonly mix up -->
+  <div class="card" id="confusion-card" style="display:none;">
+    <p style="font-size:15px; font-weight:500; margin-bottom:4px;">The ones everyone mixes up</p>
+    <p style="font-size:13px; color:#5f5e5a; margin-bottom:1.25rem;">These three heuristics are close enough to cause arguments. Here is how to tell them apart.</p>
+ 
+    <!-- Heuristic 3: User control and freedom -->
+    <div style="border-left:3px solid #5DCAA5; padding:0.75rem 1rem; margin-bottom:1rem; border-radius:0 8px 8px 0; background:#f5f4f0;">
+      <p style="font-size:14px; font-weight:500; margin-bottom:4px; color:#1a1a18;">3. User control and freedom</p>
+      <p style="font-size:13px; color:#5f5e5a; margin-bottom:6px; line-height:1.6;">The mistake has already happened. The user clicked the wrong thing. Your job now is to give them a way out — an undo, a cancel, an emergency exit. This heuristic is about escape after a mistake.</p>
+      <p style="font-size:13px; color:#085041; background:#E1F5EE; padding:6px 10px; border-radius:6px;">Classic example: no undo button after deleting a file. The action happened — where is the exit?</p>
+    </div>
+ 
+    <!-- Heuristic 5: Error prevention -->
+    <div style="border-left:3px solid #AFA9EC; padding:0.75rem 1rem; margin-bottom:1rem; border-radius:0 8px 8px 0; background:#f5f4f0;">
+      <p style="font-size:14px; font-weight:500; margin-bottom:4px; color:#1a1a18;">5. Error prevention</p>
+      <p style="font-size:13px; color:#5f5e5a; margin-bottom:6px; line-height:1.6;">The mistake has not happened yet. This heuristic is about stopping it before it occurs — through careful design, confirmation steps, or constraints that make the wrong action impossible or at least awkward. This heuristic is about stopping mistakes before they happen.</p>
+      <p style="font-size:13px; color:#085041; background:#E1F5EE; padding:6px 10px; border-radius:6px;">Classic example: an 'Are you sure you want to delete this?' dialogue before the action completes. The mistake is intercepted mid-flight.</p>
+    </div>
+ 
+    <!-- Heuristic 9: Help users recover from errors -->
+    <div style="border-left:3px solid #F0997B; padding:0.75rem 1rem; margin-bottom:1rem; border-radius:0 8px 8px 0; background:#f5f4f0;">
+      <p style="font-size:14px; font-weight:500; margin-bottom:4px; color:#1a1a18;">9. Help users recognise, diagnose, and recover from errors</p>
+      <p style="font-size:13px; color:#5f5e5a; margin-bottom:6px; line-height:1.6;">The mistake has happened and an error message has appeared. This heuristic is about whether that message is actually useful. Does it explain what went wrong in plain language? Does it tell the user how to fix it? Or does it just say 'ERROR_CODE_7741' and leave them stranded?</p>
+      <p style="font-size:13px; color:#085041; background:#E1F5EE; padding:6px 10px; border-radius:6px;">Classic example: 'Incorrect password. Please try again or reset your password here.' — clear, human, and actionable.</p>
+    </div>
+ 
+    <!-- Quick-reference summary — useful for exam situations -->
+    <div style="background:#f5f4f0; border-radius:8px; padding:0.75rem 1rem; margin-top:0.5rem;">
+      <p style="font-size:13px; font-weight:500; margin-bottom:6px; color:#1a1a18;">The quick test</p>
+      <p style="font-size:13px; color:#5f5e5a; line-height:1.6;">Ask yourself: when in the sequence of events does the heuristic apply?</p>
+      <p style="font-size:13px; color:#5f5e5a; line-height:1.8; margin-top:4px;">
+        Before the mistake — Error Prevention (heuristic 5)<br>
+        During the mistake — User Control and Freedom (heuristic 3)<br>
+        After the mistake, reading an error message — Error Recovery (heuristic 9)
+      </p>
+    </div>
+  </div>
+ 
+</div><!-- end .page-wrap -->
 
 </body>
 </html>
