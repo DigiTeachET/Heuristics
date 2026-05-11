@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nielsen's Heuristics — Year 11 Activity</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="page-wrap">
+<!-- page title -->
+  <h1>Nielsen's Heuristics — Spot the Violation</h1>
+  <p class="subtitle">Kia ora! Ko wai koe? — Year 11 Hangarau Matihiko</p>
+<!-- card that displays score and a toggle to show the heuristic list -->
+  <div class="card">
+    <div class="top-bar">
+      <div>
+        <p style="font-size:20px; color:#5f5e5a; margin-bottom:4px;">Read each disaster from Terrible Tech High. Pick which of Nielsen's 10 heuristics is being violated. You get one guess per scenario.</p>
+      </div>
+      <div>
+        <p class="score-label">Tohu / Score</p>
+        <p class="score-val" id="score-display">0 / 7</p>
+      </div>
+    </div>
+    <button class="ref-toggle" onclick="document.getElementById('ref').classList.toggle('show')">Show / hide the 10 heuristics</button>
+    <ol class="ref-list" id="ref">
+      <li>Visibility of system status</li>
+      <li>Match between system and the real world</li>
+      <li>User control and freedom</li>
+      <li>Consistency and standards</li>
+      <li>Error prevention</li>
+      <li>Recognition rather than recall</li>
+      <li>Flexibility and efficiency of use</li>
+      <li>Aesthetic and minimalist design</li>
+      <li>Help users recognise, diagnose, and recover from errors</li>
+      <li>Help and documentation</li>
+    </ol>
+  </div> <!-- end score card -->
+<!-- when the scenarios for each heuristic displays-->
+  <div id="scenarios"></div>
+
+  <div class="card finished-card" id="finished-msg">
+    <p class="finish-text" id="finish-text"></p>
+    <p class="finish-sub">Whakaaro: Which violation would cause the most harm to a real user? Discuss with your class.</p>
+    <button class="reset-btn" onclick="resetActivity()">Try again</button>
+  </div>
+
+</div>
+
+</body>
+</html>
