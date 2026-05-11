@@ -327,10 +327,10 @@ function handleAnswer(chosen, btn) {
       s.feedbackWrong +
       // Definition block appended below the explanation
       '<div style="margin-top:10px; padding-top:10px; border-top:0.5px solid rgba(160,40,40,0.25);">' +
-        '<span style="font-size:12px; text-transform:uppercase; letter-spacing:0.05em; opacity:0.7;">' +
+        '<span style="font-size:18px; font-weight:500;text-transform:uppercase; letter-spacing:0.05em; opacity:0.7;">' +
           'Definition — ' + s.correctLabel +
         '</span>' +
-        '<p style="margin:4px 0 0; font-size:13px; line-height:1.6;">' + def + '</p>' +
+        '<p style="margin:4px 0 0; font-size:18px; line-height:1.6;">' + def + '</p>' +
       '</div>';
     fb.className = 'feedback wrong show';
   }
